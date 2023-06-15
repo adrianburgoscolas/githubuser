@@ -1,6 +1,4 @@
-# Title
-
-GitHub User Data 
+# GitHub User Data
 
 ## Table of contents
 

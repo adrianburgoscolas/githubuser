@@ -1,5 +1,7 @@
 import Logo from './assets/github.svg';
 
+import GitHubUser from './GitHubUser';
+
 function App() {
   return (
     <>
@@ -14,7 +16,7 @@ function App() {
           <p className='text-neutral-400 text-center text-sm w-fit m-auto p-4'>Welcome to Your GitHub Profile Information App!</p>
         </header>
         <main className='grow'>
-        hola mundo
+          <GitHubUser />
         </main>
         <footer className='bg-[#fbccd6] p-4 text-sm text-center'>
           <div className='flex gap-2 w-fit mx-auto'>
