@@ -10,11 +10,7 @@ GitHub User Data
   - [Links](#links)
 - [My process](#my-process)
   - [Built with](#built-with)
-  - [What I learned](#what-i-learned)
-  - [Continued development](#continued-development)
-  - [Useful resources](#useful-resources)
 - [Author](#author)
-- [Acknowledgments](#acknowledgments)
 
 
 ## Overview
@@ -44,7 +40,7 @@ necessary.
 ### Links
 
 - Solution URL: [GitHub User Data](https://github.com/adrianburgoscolas/githubuser)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Live Site URL: [GitHub User Data](https://githubuser-six.vercel.app)
 
 ## My process
 
