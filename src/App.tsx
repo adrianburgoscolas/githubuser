@@ -5,10 +5,14 @@ import GitHubUser from './GitHubUser';
 function App() {
   return (
     <>
-      <div className='flex flex-col min-h-[100vh]'>
+      <div className='flex flex-col min-h-[100vh] mx-auto max-w-screen sm:max-w-[32rem]'>
+
         <header className='text-neutral-700'>
           <div 
-            className='flex items-center justify-center gap-2 max-w-screen h-32 mx-auto bg-teal-100 my-4 sm:max-w-[32rem] sm:rounded-lg shadow-lg'
+            className={`
+              flex items-center justify-center gap-2 h-32 
+              bg-teal-100 mb-4 sm:mt-4 sm:rounded-lg shadow-lg
+            `}
           >
             <img src={Logo} width={60} height={60} alt='Logo' />
             <h1 className='text-4xl font-black min-w-[210px]'>GitHub User</h1>
