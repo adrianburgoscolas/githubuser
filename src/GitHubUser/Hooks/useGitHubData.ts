@@ -1,4 +1,5 @@
 import { useState } from 'react';
+
 type UserData = {
   followers: number,
   public_repos: number,
@@ -6,6 +7,7 @@ type UserData = {
   name: string,
   avatar_url: string,
 }
+
 export default function useGitHubData() {
   const [userData, setUserData] = useState<UserData | null>(null);
   const [userName, setUserName] = useState('');
