@@ -14,12 +14,14 @@ export default function useGitHubData() {
     const userRes = await fetch(`https://api.github.com/users/${userName}`);
     if(!userRes.ok) {
       setError(true);
+      setUserData(null);
+    } else {
+      const data = await userRes.json();
+      setUserData(data);
+      const repoRes = await fetch(`https://api.github.com/users/${userName}/repos?sort=created`);
+      const repos = await repoRes.json();
+      setRepoList(repos.map((obj:any) => {return{name:obj.name, created:obj.created_at, description:obj.description}}));
     }
-    const data = await userRes.json();
-    setUserData(data);
-    const repoRes = await fetch(`https://api.github.com/users/${userName}/repos?sort=created`);
-    const repos = await repoRes.json();
-    setRepoList(repos.map((obj:any) => {return{name:obj.name, created:obj.created_at, description:obj.description}}));
     setUserName('');
     setIsLoading(state => !state);
   }

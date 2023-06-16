@@ -10,7 +10,7 @@ export default function GitHubUser() {
   return (
     <div className='text-neutral-700'>
       <GitHubUserForm userName={userName} setUserName={setUserName} handleSubmit={handleSubmit} />
-      {error && <p>Error</p>}
+      {error && <p className='bg-[#f1ccfb] mt-8 rounded-xl p-8 text-center shadow-lg'>Error getting user!</p>}
       {isLoading && <Spinner />}
       {
         (userData && !isLoading) && 

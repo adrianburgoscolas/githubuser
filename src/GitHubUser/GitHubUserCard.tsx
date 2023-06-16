@@ -15,8 +15,8 @@ export default function GitHubUserCard(
     repoList: {[index:string]:string}[],
   }) {
   return (
-    <section className='px-4 text-neutral-700'>
-      <header className='flex flex-col justify-center items-center'>
+    <section className='sm:mt-8 px-4 text-neutral-700'>
+      <header className='p-8 flex flex-col justify-center items-center shadow-lg rounded-lg bg-[#ccd6fb]'>
         <img className='rounded-full' width={100} height={100} src={avatar} alt={name} />
         <h2 className='text-xl font-black'>{name}</h2>
         {bio && <p className='pt-4 font-black'>Bio</p>}
@@ -26,8 +26,8 @@ export default function GitHubUserCard(
           <p>{repos} Repositorie{repos === 1?'':'s'}</p>
         </div>
       </header>
-      <p className='text-center text-lg font-bold mt-8'>
-        Last {`${repoList.slice(0, 10).length}`} repo{repoList.slice(0, 10).length === 1?'':'s'}
+      <p className='text-center text-lg font-bold mt-8 -mb-4'>
+        {repoList.slice(0, 10).length <= 1?'':'Last'} {`${repoList.slice(0, 10).length}`} repo{repoList.slice(0, 10).length === 1?'':'s'}
       </p>
       <div className='divide-y'>
         {repoList.map((obj:any, i:number) => (
