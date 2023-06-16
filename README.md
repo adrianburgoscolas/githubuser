@@ -33,7 +33,7 @@ necessary.
 
 ### Screenshot
 
-![](./screenshot.jpg)
+![](./screenshot.png)
 
 ### Links
 
