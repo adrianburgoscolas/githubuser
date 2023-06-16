@@ -1,6 +1,13 @@
 import { useState } from 'react';
+type UserData = {
+  followers: number,
+  public_repos: number,
+  bio: string,
+  name: string,
+  avatar_url: string,
+}
 export default function useGitHubData() {
-  const [userData, setUserData] = useState(null);
+  const [userData, setUserData] = useState<UserData | null>(null);
   const [userName, setUserName] = useState('');
   const [error, setError] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
