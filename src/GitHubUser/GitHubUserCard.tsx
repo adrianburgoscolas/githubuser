@@ -36,8 +36,8 @@ export default function GitHubUserCard(
         {repoList.slice(0, 10).length <= 1?'':'Last'} {`${repoList.slice(0, 10).length}`} repo{repoList.slice(0, 10).length === 1?'':'s'}
       </p>
       <div className='divide-y'>
-        {repoList.map((obj:any, i:number) => (
-          <div key={i} className='py-8'>
+        {repoList.map((obj: {[index:string]:string}, i: number) => (
+          <div data-testid='repo' key={i} className='py-8'>
             <div className='flex justify-between mb-2 font-semibold'>
               <p>{obj.name}</p>
               <p>{obj.created.split('T')[0]}</p>
