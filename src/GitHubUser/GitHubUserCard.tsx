@@ -29,7 +29,7 @@ export default function GitHubUserCard(
         }
         <div className='mt-4 text-sm text-neutral-400 flex justify-between w-full'>
           <p>{followers === 0?'No':followers} Follower{followers === 1?'':'s'} </p>
-          <p>{repos === 0?'No':repos} Repositorie{repos === 1?'':'s'}</p>
+          <p>{repos === 0?'No':repos} Repositor{repos === 1?'y':'ies'}</p>
         </div>
       </header>
       <p className='text-center text-lg font-bold mt-8 -mb-4'>
