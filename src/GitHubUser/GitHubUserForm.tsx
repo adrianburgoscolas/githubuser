@@ -17,6 +17,7 @@ export default function GitHubUserForm(
       <div className='flex flex-col gap-2'>
       <label className='w-fit' htmlFor='user'>User name</label>
       <input 
+        data-testid='search'
         value={userName}
         onChange={e => setUserName(e.currentTarget.value)}
         autoFocus
