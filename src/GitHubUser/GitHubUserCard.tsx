@@ -1,3 +1,5 @@
+import { Fragment } from "react";
+
 export default function GitHubUserCard(
   {
     avatar, 
@@ -17,13 +19,17 @@ export default function GitHubUserCard(
   return (
     <section className='sm:mt-8 px-4 text-neutral-700'>
       <header className='p-8 flex flex-col justify-center items-center shadow-lg rounded-lg bg-[#ccd6fb]'>
-        <img className='rounded-full' width={100} height={100} src={avatar} alt={name} />
+        <img data-testid='avatar' className='rounded-full' width={100} height={100} src={avatar} alt={name} />
         <h2 className='text-xl font-black'>{name}</h2>
-        {bio && <p className='pt-4 font-black'>Bio</p>}
-        <p className='text-justify'>{bio}</p>
+        {bio && 
+        <Fragment>
+          <p className='pt-4 font-black'>Bio</p>
+          <p data-testid='bio-content' className='text-justify'>{bio}</p>
+        </Fragment>
+        }
         <div className='mt-4 text-sm text-neutral-400 flex justify-between w-full'>
           <p>{followers === 0?'No':followers} Follower{followers === 1?'':'s'} </p>
-          <p>{repos} Repositorie{repos === 1?'':'s'}</p>
+          <p>{repos === 0?'No':repos} Repositorie{repos === 1?'':'s'}</p>
         </div>
       </header>
       <p className='text-center text-lg font-bold mt-8 -mb-4'>
