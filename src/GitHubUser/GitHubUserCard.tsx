@@ -17,7 +17,7 @@ export default function GitHubUserCard(
     repoList: {[index:string]:string}[],
   }) {
   return (
-    <section className='sm:mt-8 px-4 text-neutral-700'>
+    <section className='mb-8 sm:mt-8 px-4 text-neutral-700'>
       <header className='p-8 flex flex-col justify-center items-center shadow-lg rounded-lg bg-[#ccd6fb]'>
         <img data-testid='avatar' className='rounded-full' width={100} height={100} src={avatar} alt={name} />
         <h2 className='text-xl font-black'>{name}</h2>
