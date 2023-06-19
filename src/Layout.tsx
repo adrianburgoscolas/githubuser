@@ -1,8 +1,14 @@
+import { useRef, useEffect } from 'react';
+
 import Logo from './assets/github.svg';
 
 export default function Layout({children}:{children:React.ReactNode}) {
+  const ref = useRef<HTMLDivElement | null>(null);
+  useEffect(() => {
+    (ref.current as HTMLDivElement).style.minHeight = window.innerHeight + 'px';
+  });
   return (
-      <div className='flex flex-col min-h-[100vh] mx-auto max-w-screen sm:max-w-[32rem]'>
+      <div ref={ref} className='flex flex-col min-h-[100vh] mx-auto max-w-screen sm:max-w-[32rem]'>
         <header className='text-neutral-700'>
           <div 
             className={`
