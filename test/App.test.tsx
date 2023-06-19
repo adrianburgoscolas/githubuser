@@ -266,7 +266,7 @@ describe('GitHubUser Component Unit Test', () => {
       expect(screen.queryAllByTestId('repo')).toHaveLength(1);
     });
 
-    test('GitHubUserCard should have "3 repos" text if user has three repos', () => {
+    test('GitHubUserCard should have "Last 3 repos" text if user has three repos', () => {
       render(
         <GitHubUserCard 
           avatar={Avatar as string} 
@@ -283,6 +283,34 @@ describe('GitHubUser Component Unit Test', () => {
       )
 
       expect(screen.getByText('Last 3 repos')).toBeDefined();
+    });
+
+    test('GitHubUserCard should have "Last 10 repos" text if user has 10 or more repos', () => {
+      render(
+        <GitHubUserCard 
+          avatar={Avatar as string} 
+          name={''}
+          bio={''}
+          followers={0}
+          repos={1}
+          repoList={[
+            {name:'firt repo', created:'2023-06-18', description:'my first github repo'},
+            {name:'second repo', created:'2023-06-18', description:'my second github repo'},
+            {name:'third repo', created:'2023-06-18', description:'my third github repo'},
+            {name:'firt repo', created:'2023-06-18', description:'my first github repo'},
+            {name:'second repo', created:'2023-06-18', description:'my second github repo'},
+            {name:'third repo', created:'2023-06-18', description:'my third github repo'},
+            {name:'firt repo', created:'2023-06-18', description:'my first github repo'},
+            {name:'second repo', created:'2023-06-18', description:'my second github repo'},
+            {name:'third repo', created:'2023-06-18', description:'my third github repo'},
+            {name:'firt repo', created:'2023-06-18', description:'my first github repo'},
+            {name:'second repo', created:'2023-06-18', description:'my second github repo'},
+            {name:'third repo', created:'2023-06-18', description:'my third github repo'},
+          ]}
+        />
+      )
+
+      expect(screen.getByText('Last 10 repos')).toBeDefined();
     });
 
     test('GitHubUserCard should have three repos elements if user has three repos', () => {
@@ -302,6 +330,34 @@ describe('GitHubUser Component Unit Test', () => {
       )
 
       expect(screen.queryAllByTestId('repo')).toHaveLength(3);
+    });
+
+    test('GitHubUserCard should have 10 repos elements if user has 10 or more repos', () => {
+      render(
+        <GitHubUserCard 
+          avatar={Avatar as string} 
+          name={''}
+          bio={''}
+          followers={0}
+          repos={0}
+          repoList={[
+            {name:'firt repo', created:'2023-06-18', description:'my first github repo'},
+            {name:'second repo', created:'2023-06-18', description:'my second github repo'},
+            {name:'third repo', created:'2023-06-18', description:'my third github repo'},
+            {name:'firt repo', created:'2023-06-18', description:'my first github repo'},
+            {name:'second repo', created:'2023-06-18', description:'my second github repo'},
+            {name:'third repo', created:'2023-06-18', description:'my third github repo'},
+            {name:'firt repo', created:'2023-06-18', description:'my first github repo'},
+            {name:'second repo', created:'2023-06-18', description:'my second github repo'},
+            {name:'third repo', created:'2023-06-18', description:'my third github repo'},
+            {name:'firt repo', created:'2023-06-18', description:'my first github repo'},
+            {name:'second repo', created:'2023-06-18', description:'my second github repo'},
+            {name:'third repo', created:'2023-06-18', description:'my third github repo'},
+          ]}
+        />
+      )
+
+      expect(screen.queryAllByTestId('repo')).toHaveLength(10);
     });
   });
 
