@@ -8,10 +8,12 @@ export default function Layout({children}:{children:React.ReactNode}) {
 
   useEffect(() => {
     setHeight();
-    window.addEventListener('resize', setHeight)
+    window.addEventListener('resize', setHeight);
+    window.addEventListener('orientationchange', setHeight);
 
     return () => {
-      window.removeEventListener('resize', setHeight)
+      window.removeEventListener('resize', setHeight);
+      window.removeEventListener('orientationchange', setHeight);
     }
   });
 
