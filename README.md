@@ -6,6 +6,7 @@
   - [The challenge](#the-challenge)
   - [Screenshot](#screenshot)
   - [Links](#links)
+  - [Usage](#usage)
 - [My process](#my-process)
   - [Built with](#built-with)
 - [Author](#author)
@@ -39,6 +40,20 @@ necessary.
 
 - Solution URL: [GitHub User Data](https://github.com/adrianburgoscolas/githubuser)
 - Live Site URL: [GitHub User Data](https://githubuser-six.vercel.app)
+
+### Usage
+
+- Clone the repository:
+  - Using HTTPS `git clone https://github.com/adrianburgoscolas/githubuser.git`
+  - Using SSH `git clone git@github.com:adrianburgoscolas/githubuser.git`
+- Run the project:
+  - npm: `npm run dev`
+  - yarn: `yarn dev`
+  - pnpm: `pnpm dev`
+- Run the Frontend Unit Test:
+  - npm: `npm run test`
+  - yarn: `yarn test`
+  - pnpm: `pnpm test`
 
 ## My process
 
