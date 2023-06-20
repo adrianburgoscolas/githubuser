@@ -1,25 +1,9 @@
-import { useRef, useEffect } from 'react';
-
 import Logo from './assets/github.svg';
 
+import useLayout from './useLayout';
+
 export default function Layout({children}:{children:React.ReactNode}) {
-
-  const ref = useRef<HTMLDivElement | null>(null);
-
-  useEffect(() => {
-    setHeight();
-    window.addEventListener('resize', setHeight);
-    window.addEventListener('orientationchange', setHeight);
-
-    return () => {
-      window.removeEventListener('resize', setHeight);
-      window.removeEventListener('orientationchange', setHeight);
-    }
-  });
-
-  function setHeight() {
-    (ref.current as HTMLDivElement).style.minHeight = window.innerHeight + 'px';
-  }
+  const ref = useLayout();
 
   return (
       <div ref={ref} className='flex flex-col mx-auto max-w-screen sm:max-w-[32rem]'>
